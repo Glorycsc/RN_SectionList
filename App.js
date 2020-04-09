@@ -32,10 +32,7 @@ const App: () => React$Node = () => {
         <>
             <StatusBar barStyle="dark-content"/>
             <SafeAreaView>
-                <ScrollView
-                    contentInsetAdjustmentBehavior="automatic"
-                    style={styles.scrollView}>
-                    <Header/>
+                <ScrollView>
                     <View style={styles.body}>
                         <SectionList
                             renderItem={({item, index, section}) => <Text key={index}>{item}</Text>}

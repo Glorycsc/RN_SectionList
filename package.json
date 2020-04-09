@@ -10,8 +10,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "beeshell": "^2.0.10",
     "react": "16.11.0",
-    "react-native": "0.62.2"
+    "react-native": "0.62.2",
+    "react-native-final-tree-view": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
