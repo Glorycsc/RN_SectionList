@@ -1,10 +1,11 @@
 /*Example of React Native Tree View*/
 import React from 'react';
 //import React
-import {Text, View,ScrollView} from 'react-native';
+import {Text, View, ScrollView} from 'react-native';
 //import Basic React Native components
 import TreeView from 'react-native-final-tree-view';
 //import library for the TreeView
+import {Button, Popover} from 'beeshell';
 
 //Dummy data for the Tree View
 const state = {
@@ -95,14 +96,7 @@ const state = {
                         'subType': 1,
                         'children': [],
                     },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
+
                     {
                         'id': 5,
                         'name': 'EU_水泥厂_Y',
@@ -178,341 +172,6 @@ const state = {
                     {
                         'id': 9,
                         'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    }, {
-                        'id': 5,
-                        'name': 'EU_水泥厂_Y',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 9,
-                        'name': '测试公司',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 2,
-                        'children': [],
-                    },
-                    {
-                        'id': 6,
-                        'name': '测试name',
-                        'isVisiable': true,
-                        'type': 3,
-                        'subType': 1,
-                        'children': [],
-                    },
-                    {
-                        'id': 19,
-                        'name': '华夏科技',
                         'isVisiable': true,
                         'type': 3,
                         'subType': 2,
@@ -665,6 +324,27 @@ function renderMuiltItem(isExpanded, hasChildrenNodes, level, node) {//目前最
 function FinalTree() {
     return (
         <ScrollView>
+
+            <Popover
+                ref={c => {
+                    this._popoverA = c;
+                }}
+            >
+               nihaohnihao
+            </Popover>
+
+            <Button type="primary" size="md"
+                    onPress={() => {
+                        this._popoverA.open();
+                    }}
+            >
+                <View>
+                    <Text>自定义</Text>
+                    <Text>支持组件</Text>
+                </View>
+            </Button>
+
+
             <TreeView
                 style={{backgroundColor: 'red'}}
                 data={state.data2.children}
@@ -681,4 +361,4 @@ function FinalTree() {
 
 }
 
-export default FinalTree;
+export default FinalTree; //可以到处一个方法, 一切都是function
