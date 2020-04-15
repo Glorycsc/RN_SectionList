@@ -1,10 +1,6 @@
 /*Example of React Native Tree View*/
 import React from 'react';
-//import React
-import {Text, View, ScrollView,StyleSheet} from 'react-native';
-//import Basic React Native components
-import TreeView from 'react-native-final-tree-view';
-//import library for the TreeView
+import {Text, View, ScrollView, StyleSheet, FlatList} from 'react-native';
 import {Button, Picker, Tip} from 'beeshell';
 
 
@@ -15,6 +11,19 @@ export default class Pickers extends React.Component {
         super(props);
         this.state = {
             directionIndex: 0,
+            pickerVal: '',
+            pickerData: [
+                {key: 'Devin'},
+                {key: 'Dan'},
+                {key: 'Dominic'},
+                {key: 'Jackson'},
+                {key: 'James'},
+                {key: 'Joel'},
+                {key: 'John'},
+                {key: 'Jillian'},
+                {key: 'Jimmy'},
+                {key: 'Julie'},
+            ],
         };
     }
 
@@ -45,7 +54,9 @@ export default class Pickers extends React.Component {
                     ref={(c) => {
                         this._picker_ = c;
                     }}
-                    label='甜点饮品'
+                    label={this.state.pickerVal === '' ?
+                        this.state.pickerData===[]?'':this.state.pickerData[0].key
+                        : this.state.pickerVal}
                     disabled={false}
                     cancelable={true}
                     onToggle={(active) => {
@@ -57,11 +68,22 @@ export default class Pickers extends React.Component {
                             backgroundColor: '#fff',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            height: 100,
+                            height: 500,
                             borderTopColor: '#ddd',
                             borderTopWidth: StyleSheet.hairlineWidth,
                         }}>
                         <Text>内容区</Text>
+                        <FlatList
+                            data={this.state.pickerData}
+                            renderItem={({item}) => <Text
+                                onPress={() => {
+                                    this._picker_.close();
+                                    this.setState({
+                                        pickerVal: item.key,
+                                    });
+                                }}
+                                style={styles.item}>{item.key}</Text>}
+                        />
                     </View>
                 </Picker>
             </ScrollView>
@@ -69,3 +91,14 @@ export default class Pickers extends React.Component {
     }
 }
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingTop: 22,
+    },
+    item: {
+        padding: 10,
+        fontSize: 18,
+        height: 44,
+    },
+});
