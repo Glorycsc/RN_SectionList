@@ -5,7 +5,7 @@ import {Text, View, ScrollView} from 'react-native';
 //import Basic React Native components
 import TreeView from 'react-native-final-tree-view';
 //import library for the TreeView
-import {Button, Popover} from 'beeshell';
+import {Button, Popover, Tip} from 'beeshell';
 
 //Dummy data for the Tree View
 const state = {
@@ -315,7 +315,9 @@ function renderMuiltItem(isExpanded, hasChildrenNodes, level, node) {//目前最
         );
     } else {
         return (
-            <Text style={{backgroundColor: 'cyan', marginLeft: 30}}>{node.name}</Text>
+            <Text style={{backgroundColor: 'cyan', marginLeft: 30}}
+            onPress={()=>Tip.show(node.name)}
+            >{node.name}</Text>
         );
     }
 }
@@ -323,14 +325,32 @@ function renderMuiltItem(isExpanded, hasChildrenNodes, level, node) {//目前最
 
 function FinalTree() {
     return (
-        <ScrollView>
+        <ScrollView style={{paddingTop:22}}>
 
             <Popover
                 ref={c => {
                     this._popoverA = c;
                 }}
+                direction='down'
+                align='center'
+                screenHieght={100}
+                offsetX={100}
+                offsetY={100}
+                children={
+                    <TreeView
+                        style={{backgroundColor: 'red'}}
+                        data={state.data2.children}
+                        renderNode={({node, level, isExpanded, hasChildrenNodes}) => {
+                            return (
+                                <View>
+                                    {renderMuiltItem(isExpanded, hasChildrenNodes, level, node)}
+                                </View>
+                            );
+                        }}
+                    />
+                }
             >
-               nihaohnihao
+
             </Popover>
 
             <Button type="primary" size="md"
@@ -345,17 +365,7 @@ function FinalTree() {
             </Button>
 
 
-            <TreeView
-                style={{backgroundColor: 'red'}}
-                data={state.data2.children}
-                renderNode={({node, level, isExpanded, hasChildrenNodes}) => {
-                    return (
-                        <View>
-                            {renderMuiltItem(isExpanded, hasChildrenNodes, level, node)}
-                        </View>
-                    );
-                }}
-            />
+
         </ScrollView>
     );
 
