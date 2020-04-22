@@ -1,7 +1,9 @@
 /*Example of React Native Tree View*/
 import React from 'react';
 import {Text, View, ScrollView, StyleSheet, FlatList} from 'react-native';
-import {Button, Picker, Tip} from 'beeshell';
+import { Picker} from './beeshell/dist/components/Picker';
+import {Tip} from './beeshell/dist/components/Tip';
+import {Button} from './beeshell/dist/components/Button';
 
 
 export default class Pickers extends React.Component {
@@ -54,9 +56,9 @@ export default class Pickers extends React.Component {
                     ref={(c) => {
                         this._picker_ = c;
                     }}
-                    label={this.state.pickerVal === '' ?
-                        this.state.pickerData===[]?'':this.state.pickerData[0].key
-                        : this.state.pickerVal}
+                    // label={this.state.pickerVal === '' ?
+                    //     this.state.pickerData===[]?'':this.state.pickerData[0].key
+                    //     : this.state.pickerVal}
                     disabled={false}
                     cancelable={true}
                     onToggle={(active) => {
